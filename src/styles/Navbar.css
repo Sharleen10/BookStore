@@ -1,0 +1,266 @@
+.navbar {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 0.75rem 0;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Logo */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-icon {
+  color: #8b4513;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2c1810;
+  font-family: 'Georgia', serif;
+}
+
+/* Nav links */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #2c1810;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #8b4513;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #adaaa7;
+  transition: width 0.2s;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Right side */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  background: #f9f7f4;
+  border-radius: 8px;
+  padding: 0.5rem;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.search-icon {
+  margin: 0 0.5rem;
+  color: #666;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.search-submit {
+  background-color: #0e0d0d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.search-submit:hover {
+  background-color: #d6ccc6;
+}
+
+/* Auth buttons */
+.auth-buttons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.btn-login {
+  background: transparent;
+  color: #2c1810;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-login:hover {
+  background-color: #f5f5f5;
+}
+
+.btn-signup {
+  background-color:transparent;
+  color: #2c1810;
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-signup:hover {
+  background-color: #f5f5f5;
+}
+
+/* Mobile menu toggle */
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  background-color: white;
+  padding: 1rem 2rem;
+  border-top: 1px solid #eee;
+}
+
+.mobile-menu-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobile-nav-link {
+  text-decoration: none;
+  color: #2c1810;
+  font-weight: 500;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-auth-buttons {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.btn-login-mobile, .btn-signup-mobile {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-login-mobile {
+  background: transparent;
+  color: #2c1810;
+  border: 1px solid #ddd;
+}
+
+.btn-signup-mobile {
+  background-color: #8b4513;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-menu, .auth-buttons, .search-bar {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
+/* Desktop Search visible only on desktop */
+.desktop-search {
+  display: flex;
+}
+
+/* Mobile Search visible only on mobile */
+.mobile-search {
+  display: none;
+  padding: 0.5rem 1rem;
+  background-color: #f9f7f4;
+}
+
+.mobile-search .search-container {
+  width: 100%;
+  max-width: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .nav-menu,
+  .auth-buttons,
+  .desktop-search {
+    display: none; /* hide desktop-only items */
+  }
+
+  .mobile-search {
+    display: flex; /* show mobile search bar */
+    justify-content: center;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+}
+
